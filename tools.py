@@ -106,7 +106,6 @@ def get_daily_menu(date_str: str = "") -> str:
     if not date_str:
         date_str = datetime.now().strftime("%Y-%m-%d")
 
-    # Gelecekteki tam otomasyon için Firebase şemasına strict (katı) uyum sağlayan yapı
     firebase_payload = {
         "document_id": f"menu_{date_str.replace('-', '')}",
         "date": date_str,
