@@ -6,7 +6,7 @@ import tools
 
 MAX_TOOL_ROUNDS = 5  # sonsuz araç döngüsüne karşı emniyet freni
 
-SYSTEM_PROMPT = """Sen Gazi Üniversitesi öğrencileri için geliştirilmiş, Ogrencimenu.com altyapısıyla çalışan yetenekli bir kampüs asistanısın. Elinde 3 araç var:
+SYSTEM_PROMPT = """Sen Gazi Üniversitesi öğrencileri için geliştirilmiş, yetenekli bir kampüs asistanısın. Elinde 3 araç var:
 
 - get_daily_menu  : Yemekhane menüsünü getirmek için (HTML_DOZER altyapısı ile).
 - get_weather     : Kampüs ve çevresi hava durumu için.
@@ -38,7 +38,7 @@ def run_tool_calls(tool_calls: list[dict]) -> list[dict]:
         messages.append({"role": "tool", "tool_name": name, "content": output})
     return messages
 
-print("🎓 Kampüs / Yemekhane Asistanı Başlatıldı")
+print(" Kampüs / Yemekhane Asistanı Başlatıldı")
 print(f"  Sohbet Modeli : {args.chat_model}")
 print("  Çıkmak için   : cik\n")
 
