@@ -42,3 +42,19 @@ Gelistirme ve test surecinde karsilasilan temel hatalar ve uygulanan cozum adiml
 *   **Hata Ciktisi:** `Ollama hatasi (400): {"error":"registry.ollama.ai/library/llama3:latest does not support tools"}`
 *   **Neden:** Baslangicta kullanilan standart `llama3` modelinin, yerlesik bir arac cagirma yetenegine sahip olmamasi. Model, disaridan gonderilen fonksiyon semalarini isleyemedigi icin HTTP 400 hatasi dondurmustur.
 *   **Cozum:** Meta tarafindan ozel olarak arac kullanimi icin optimize edilmis olan `llama3.1` modeli `ollama pull llama3.1` komutu ile sisteme indirilmis ve baslatma komutu `--chat-model llama3.1` parametresi ile guncellenerek sorun giderilmistir.
+
+
+## Örnek Kullanım ve Test Logları
+
+Sistemin yerel makinede çalıştırıldığı ve kullanıcının girdisine göre araçlarınotonom olarak tetiklendiği örnek bir terminal oturumu aşağıdadır:
+
+```text
+PS C:\Users\kampus_asistani> python chat.py --chat-model llama3.1
+🎓 Kampüs / Yemekhane Asistanı Başlatıldı
+  Sohbet Modeli : llama3.1
+  Çıkmak için   : cik
+
+Öğrenci > Bugün yemekhanede ne var?
+  ⚙️ Çalıştırılıyor: get_daily_menu({'date_str': '2023-12-01'})
+
+Asistan > Yemekhane menüsünde Ezogelin Çorbası, İzmir Köfte ve Şehriyeli Pirinç Pilavı gibi lezzetler var. Cacık ve mevsim meyvesi de ekstra olarak sunuluyor. Kalori değeri 1050 kcal.
